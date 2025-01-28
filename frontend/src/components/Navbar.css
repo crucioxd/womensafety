@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+:root {
+    --primary: #6A1B9A;
+    --secondary: #D81B60;
+    --hover-pink: #FFB6C1;
+    --background: #d1d1d1ea;
+    --text-dark: #2D1339;
+    font-family: "Inter", serif;
+    
+  }
+
+  
+  .navbar-container {
+    border-radius: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+    padding: 0.7rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 
+    0 2px 4px rgba(106, 27, 154, 0.2),    /* Base shadow */
+     /* Mid-layer */
+    0 8px 16px rgba(106, 27, 154, 0.1);   /* Outer glow */
+  
+  
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .navbar-container.scrolled {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .logo-icon {
+    color: var(--secondary);
+    font-size: 1.75rem;
+  }
+  
+  .logo-text {
+    color: purple;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  
+  .nav-link {
+    margin: 2rem;
+    font-weight: 500;
+    color: purple;
+    text-decoration: none;
+    font-size: 1.1rem;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0.5rem 0;
+}
+
+/* Underline animation */
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary);
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::before {
+    width: 100%;
+}
+
+/* Bounce effect on hover */
+.nav-link:hover {
+    color: var(--secondary);
+    transform: translateY(-2px);
+}
+
+/* Optional: Add subtle background hover effect */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 110%;
+    height: 120%;
+    background: rgba(218, 112, 214, 0.1);
+    transform: translate(-50%, -50%) scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease-out;
+    border-radius: 4px;
+    z-index: -1;
+}
+
+.nav-link:hover::after {
+    transform: translate(-50%, -50%) scaleX(1);
+}
+
+/* Add animation for initial load */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.nav-link {
+    animation: slideIn 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+/* Add delay between each nav-link animation */
+.nav-link:nth-child(1) { animation-delay: 0.2s; }
+.nav-link:nth-child(2) { animation-delay: 0.3s; }
+.nav-link:nth-child(3) { animation-delay: 0.4s; }
+.nav-link:nth-child(4) { animation-delay: 0.5s; }
+
+/* Optional: Add click effect */
+.nav-link:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+}
+  .chatbot-button {
+    background-color: var(--secondary);
+    border: none;
+    border-radius: 50%;
+    padding: 0.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .chatbot-button:hover {
+    transform: scale(1.1);
+    background-color: #AD1457;
+  }
+  
+  .chatbot-icon {
+    color: white;
+    font-size: 1.5rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .navbar-container {
+      padding: 1rem;
+    }
+    
+    .nav-link {
+      gap: 1rem;
+      font-size: 1rem;
+    }
+    
+    .logo-text {
+      font-size: 1.25rem;
+    }
+    
+    .chatbot-button {
+      padding: 0.6rem;
+    }
+  }
