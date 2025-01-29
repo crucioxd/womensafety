@@ -1,0 +1,194 @@
+/* Popup Overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 300px;
+}
+
+.popup h3 {
+  color: #2d1339;
+  margin-bottom: 1.5rem;
+}
+
+.popup button {
+  background-color: #6a1b9a;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin: 0.5rem;
+  transition: background-color 0.3s;
+  font-size: 1rem;
+}
+
+.popup button:hover {
+  background-color: #d81b60;
+}
+
+/* Existing styles remain the same */
+.complaint-form-container {
+  padding: 3rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 2rem auto;
+  font-family: "Segoe UI", sans-serif;
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Rest of your existing CSS styles remain unchanged */
+
+.complaint-form-container {
+  padding: 3rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Basic box shadow for 3D effect */
+  max-width: 900px;
+  margin: 2rem auto;
+  font-family: "Segoe UI", sans-serif;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); 
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.complaint-form-container:hover {
+  transform: translateY(-10px); /* Slight elevation on hover */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Form Heading */
+.form-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2d1339;
+  margin-bottom: 2rem;
+  margin-top: -2rem;
+  text-transform: uppercase;
+}
+
+/* Motivational Quote */
+.motivational-quote {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #6a1b9a;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.form-group:hover {
+  transform: scale(1.05); /* Slight hover scale effect */
+}
+
+/* Label */
+label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #2d1339;
+  font-weight: 600;
+}
+
+/* Input, Textarea, Select */
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  border-radius: 1rem;
+  border: 1px solid #ddd;
+  margin-top: 0.5rem;
+  box-sizing: border-box;
+  background-color: #f4f0f6;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #6a1b9a;
+  box-shadow: 0 0 8px rgba(106, 27, 154, 0.6);
+}
+
+/* Textarea */
+textarea {
+  resize: vertical;
+  min-height: 160px;
+}
+
+/* Form Buttons */
+.form-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #d81b60, #6a1b9a);
+  color: white;
+  font-weight: bold;
+  padding: 1.2rem 2.5rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  transform: scale(1);
+}
+
+.submit-btn:hover {
+  background: linear-gradient(135deg, #6a1b9a, #d81b60);
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(106, 27, 154, 0.3);
+}
+
+.submit-btn:active {
+  transform: scale(1);
+}
+
+/* Icon Styling */
+.form-group label svg {
+  margin-right: 10px;
+  color: #6a1b9a;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .complaint-form-container {
+    padding: 2rem;
+  }
+
+  .form-heading {
+    font-size: 2rem;
+  }
+
+  .submit-btn {
+    padding: 1rem 2rem;
+  }
+}

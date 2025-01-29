@@ -1,0 +1,71 @@
+{
+    "emergencyContacts": [
+      {
+        "name": "Delhi Police Women's Helpline",
+        "contact": "1091",
+        "type": "Police Helpline",
+        "available24x7": true
+      },
+      {
+        "name": "National Commission for Women",
+        "contact": "7827170170",
+        "type": "Women Safety",
+        "available24x7": true
+      },
+      {
+        "name": "Delhi Commission for Women",
+        "contact": "181",
+        "type": "Women Safety",
+        "available24x7": true
+      },
+      {
+        "name": "Delhi Police Emergency Helpline",
+        "contact": "100",
+        "type": "Police Emergency",
+        "available24x7": true
+      },
+      {
+        "name": "Nirbhaya Helpline",
+        "contact": "1515",
+        "type": "Women Safety",
+        "available24x7": true
+      },
+      {
+        "name": "Child Helpline",
+        "contact": "1098",
+        "type": "Child Protection",
+        "available24x7": true
+      },
+      {
+        "name": "Delhi Traffic Police Helpline",
+        "contact": "1095",
+        "type": "Traffic Assistance",
+        "available24x7": true
+      },
+      {
+        "name": "Sakshi NGO (Women Safety Support)",
+        "contact": "+91-11-26843915",
+        "type": "NGO",
+        "available24x7": false
+      },
+      {
+        "name": "Shakti Shalini (Women Crisis Helpline)",
+        "contact": "+91-11-24373736",
+        "type": "NGO",
+        "available24x7": false
+      },
+      {
+        "name": "Delhi Medical Emergency",
+        "contact": "102",
+        "type": "Ambulance",
+        "available24x7": true
+      },
+      {
+        "name": "Fire Emergency",
+        "contact": "101",
+        "type": "Fire Services",
+        "available24x7": true
+      }
+    ]
+  }
+  

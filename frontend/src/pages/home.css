@@ -2,16 +2,60 @@
 .home-container {
     min-height: 100vh;
     background-color: #f8f3fc; /* Light purple background */
-    padding: 2rem;
+
+    padding-top: 0.5rem;
+    
+    padding-left: 0;
+    padding-right: 0;
     font-family: "Segoe UI", sans-serif;
   }
-  
+  /* News Ticker Styles */
+/* News Ticker Styles */
+.news-ticker {
+  background-color: #f8f9fa;
+  padding: 12px 0;
+  border-bottom: 2px solid #e9ecef;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.ticker-content {
+  display: inline-block;
+  animation: ticker 25s linear infinite;
+  padding-left: 100%;
+}
+
+.ticker-item {
+  display: inline-block;
+  padding: 0 2rem;
+  color: #2D1339;
+  font-weight: 500;
+  position: relative;
+}
+
+.ticker-item:after {
+  content: "•";
+  position: absolute;
+  right: -15px;
+  color: #D81B60;
+}
+
+/* Prevent dot from appearing after the last item */
+.ticker-item:last-child:after {
+  content: ""; /* Remove the dot */
+}
+
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
   /* Hero Section */
   .hero-section {
     position: relative;
     padding: 4rem 1rem;
     height: 67.4vh;
-
+   
     background: linear-gradient(135deg, #6a1b9a 0%, #d81b60 100%);
     border-radius: 1rem;
     color: white;
@@ -75,7 +119,7 @@
   }
   
   .hero-image {
-    z-index: 1000;
+    z-index: -1;
     margin-right: 2rem;
     margin-bottom: 5.8rem;
     height: 29rem;
@@ -179,7 +223,7 @@ button span {
     background-color: white;
     padding: 2rem;
     border-radius: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     text-align: center;
     transition: transform 0.2s;
   }

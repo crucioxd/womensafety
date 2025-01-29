@@ -2,6 +2,8 @@ import React from "react";
 import { FaShieldAlt, FaRobot, FaHandsHelping } from "react-icons/fa";
 import Navbar from "../components/navbar";
 import womenImage from "../assets/mainimage.png";
+import Footer from "../components/Footer";
+import Testimonials from "../components/Testimonials";
 import "./home.css";
 
 const theme = {
@@ -11,10 +13,27 @@ const theme = {
 };
 
 const Home = () => {
+
+  const bulletins = [
+    "New: Women's Safety Scholarship Program applications now open!",
+    "Delhi Government launches 24/7 women's helpline: 011-23379181",
+    "Self-defense workshops available in all districts - Register online",
+    "GPS-enabled safety devices now available at subsidized rates",
+    "Night patrol vehicles doubled in high-risk areas"
+  ];
   return (
     <>
     
       <div className="home-container">
+      <div className="news-ticker">
+          <div className="ticker-content">
+            {bulletins.map((item, index) => (
+              <span key={index} className="ticker-item">
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
         {/* Hero Section */}
         <section className="hero-section">
           <h1 className="hero-heading">Creating a Safer Delhi for Women</h1>
@@ -27,8 +46,8 @@ const Home = () => {
                 vigilance.
               </p>
               <div className="buttons">
-              <button className="registerbtn">register now</button>
-            <button className="livebtn">live tracking</button>
+              <button className="registerbtn">Register now</button>
+            <button className="livebtn">Live tracking</button>
 
               </div>
              
@@ -81,7 +100,10 @@ const Home = () => {
            
           </div>
         </div>
+        <Testimonials/>
+        <Footer/>
       </div>
+  
     </>
   );
 };
