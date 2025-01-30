@@ -74,7 +74,7 @@ const Chatbot = ({ isOpen, onClose }) => {
           onChange={(e) => setInputText(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && handleSend()}
         />
-        <button className="send-button" onClick={handleSend}>
+        <button className="send-button1" onClick={handleSend}>
           <FaPaperPlane />
         </button>
       </div>

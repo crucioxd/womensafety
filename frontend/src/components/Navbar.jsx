@@ -46,9 +46,9 @@ const Navbar = () => {
                 <a href="#volunteer" className="dropdown-item">
                   <FaHandHolding className="dropdown-icon" /> Volunteership
                 </a>
-                <a href="#sos" className="dropdown-item">
+                <Link to="/live-sos" className="dropdown-item">
                   <FaCrosshairs className="dropdown-icon" /> Live SOS
-                </a>
+                </Link>
               </div>
             )}
           </div>

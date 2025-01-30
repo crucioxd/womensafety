@@ -1,0 +1,176 @@
+/* SOSPage.css */
+
+/* General container styling */
+.sos-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: white;  /* White background */
+}
+
+/* Map container styling */
+.map-container {
+  height: 500px;
+  width: 100%;
+  margin: 2rem 0;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Leaflet overrides */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+.leaflet-control-attribution {
+  font-size: 0.8rem !important;
+}
+
+/* SOS Button */
+.sos-button {
+  display: block;
+  margin: 2rem auto;
+  padding: 1.2rem 3rem;
+  background: linear-gradient(135deg, #6a1b9a, #d81b60); /* Purple and pink gradient */
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(216, 27, 96, 0.3);
+}
+
+.sos-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(216, 27, 96, 0.4);
+}
+
+.sos-button.sending {
+  background: linear-gradient(135deg, #d81b60, #6a1b9a);
+  cursor: not-allowed;
+}
+
+/* Email Modal */
+.email-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.email-modal {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.email-input {
+  width: 100%;
+  padding: 1rem;
+  margin: 1rem 0;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.send-button, .cancel-button {
+  flex: 1;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.send-button {
+  background: #d81b60;
+  color: white;
+}
+
+.cancel-button {
+  background: #6a1b9a;
+  color: white;
+}
+
+.error-message {
+  color: #ff4444;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* Safety Tips Section */
+.safety-tips {
+  margin-left: -1.5rem;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 15px;
+  max-width: 800px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.safety-tips h3 {
+  color: #2d1339;
+  margin-bottom: 1rem;
+}
+
+.safety-tips ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.safety-tips li {
+  padding: 0.5rem 0;
+  color: #4a4a4a;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sos-container {
+    padding: 1rem;
+  }
+
+  .map-container {
+    height: 400px;
+    margin: 1rem 0;
+  }
+
+  .sos-button {
+    width: 90%;
+    padding: 1rem;
+  }
+}
