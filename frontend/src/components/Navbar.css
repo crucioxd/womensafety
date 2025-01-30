@@ -11,7 +11,43 @@
     font-family: "Inter", serif;
     
   }
+/* Add to existing Navbar CSS */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
 
+.language-toggle {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #6A1B9A;
+  color: #6A1B9A;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 90px;
+}
+
+.language-toggle:hover {
+  background: #6A1B9A;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Hide Google Translate elements */
+.goog-te-banner-frame {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+#google_translate_element {
+  display: none;
+}
   
   .navbar-container {
     border-radius: 1rem;
@@ -60,6 +96,7 @@
  
   .nav-links{
     display: flex;
+    margin-left: 6rem;
    
   }
   .nav-link {
@@ -224,6 +261,11 @@
   .login:active {
     transform: scale(0.95);
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  }
+
+  .logout-button{
+    background: linear-gradient(135deg, #D81B60, #6A1B9A);
+    color: white;
   }
   
   /* Chatbot Fixed Button */

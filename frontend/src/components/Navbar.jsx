@@ -1,10 +1,10 @@
 import { FaCommentDots, FaCrosshairs, FaHandHolding, FaFemale, FaRobot } from "react-icons/fa";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 import Chatbot from "./Chatbot/Chatbot";
 
-const Navbar = () => {
+const Navbar = ({ isLoggedIn, setIsLoggedIn, lang, toggleLanguage }) => {
   const [scrolled, setScrolled] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -15,21 +15,24 @@ const Navbar = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("authToken");
+    setIsLoggedIn(false);
+  };
 
   return (
     <>
       <nav className={`navbar-container ${scrolled ? "scrolled" : ""}`}>
         <div className="logo-container">
-          <span className="logo-text">Sum<FaFemale className="logo-icon" />tra</span>
+          <Link to="/" className="logo-link">
+            <span className="logo-text">Sum<FaFemale className="logo-icon" />tra</span>
+          </Link>
         </div>
 
         <div className="nav-links">
-          {/* Changed href to Link component for Home */}
           <Link to="/" className="nav-link">Home</Link>
 
           <div 
@@ -43,9 +46,9 @@ const Navbar = () => {
                 <Link to="/file-complaint" className="dropdown-item">
                   <FaCommentDots className="dropdown-icon" /> Complaints
                 </Link>
-                <a href="#volunteer" className="dropdown-item">
+                <Link to="/volunteer" className="dropdown-item">
                   <FaHandHolding className="dropdown-icon" /> Volunteership
-                </a>
+                </Link>
                 <Link to="/live-sos" className="dropdown-item">
                   <FaCrosshairs className="dropdown-icon" /> Live SOS
                 </Link>
@@ -54,9 +57,20 @@ const Navbar = () => {
           </div>
         </div>
 
-        <a href="login" className="login">Login</a>
+        <div className="nav-right">
+          <button className="language-toggle" onClick={toggleLanguage}>
+            {lang === 'en' ? 'हिंदी' : 'English'}
+          </button>
+          
+          {!isLoggedIn ? (
+            <Link to="/login" className="login">Login</Link>
+          ) : (
+            <button onClick={handleLogout} className="logout-button">
+              Logout
+            </button>
+          )}
+        </div>
 
-        {/* Chatbot Toggle Button */}
         <button 
           className="chatbot-fixed-button" 
           onClick={() => setIsChatOpen(!isChatOpen)}
@@ -65,7 +79,6 @@ const Navbar = () => {
         </button>
       </nav>
 
-      {/* Chatbot Component */}
       {isChatOpen && <Chatbot isOpen={isChatOpen} onClose={() => setIsChatOpen(false)} />}
     </>
   );

@@ -125,10 +125,13 @@
     height: 29rem;
     width: 50.5rem;
 
-
-    
     filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
-  }
+
+    /* ✅ Adding the fading border effect */
+    mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
+    -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
+}
+
   /* Buttons container */
 .buttons {
   display: flex;

@@ -64,7 +64,8 @@
   max-width: 900px;
   margin: 2rem auto;
   font-family: "Segoe UI", sans-serif;
-  text-align: center;
+  text-align: left;
+  
   position: relative;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); 
   overflow: hidden;
