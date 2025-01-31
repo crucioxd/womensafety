@@ -1,9 +1,24 @@
 {
-    "tips": [
-      "Always share your live location with trusted contacts when traveling alone",
-      "Learn basic self-defense techniques like palm strikes and knee kicks",
-      "Carry a personal alarm and keep it accessible",
-      "Avoid dark alleys and poorly lit areas at night",
-      "Trust your instincts - if a situation feels unsafe, leave immediately"
-    ]
+  "tips": [
+    "Always share your live location with trusted contacts when traveling alone. Use emergency SOS features on your phone.",
+    "Learn basic self-defense techniques like palm strikes and knee kicks. Confidence in your abilities can make a difference.",
+    "Carry a personal alarm, pepper spray, or a whistle and keep them easily accessible for quick use in emergencies.",
+    "Avoid dark alleys, isolated streets, and poorly lit areas at night. Walk with confidence and stay aware of your surroundings.",
+    "Trust your instincts—if a situation feels unsafe, leave immediately. Your safety is the top priority, and you don’t need to justify leaving.",
+    "Keep emergency helpline numbers saved in your phone and written somewhere handy.",
+    "If using a cab or ride-sharing service, always share ride details with a trusted contact and verify the driver’s credentials."
+  ],
+  "motivational_quotes": [
+    "A strong woman stands up for herself. A stronger woman stands up for others.",
+    "Your safety is your right—never compromise on it.",
+    "Courage is resistance to fear, mastery of fear, not absence of fear.",
+    "Empowered women empower the world.",
+    "Self-defense is not just a set of techniques; it’s a state of mind."
+  ],
+  "helpline_numbers": {
+    "India": "+91 1091 (Women’s Helpline), 112 (Emergency Services), 181 (Women’s Crisis Hotline)",
+    "USA": "911 (Emergency Services), 1-800-799-7233 (National Domestic Violence Hotline)",
+    "UK": "999 (Emergency Services), 0808 2000 247 (Women's Aid National Helpline)",
+    "Australia": "000 (Emergency Services), 1800 737 732 (1800RESPECT National Helpline)"
   }
+}

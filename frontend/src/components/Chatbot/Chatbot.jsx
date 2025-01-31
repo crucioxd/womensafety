@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { FaTimes, FaPaperPlane, FaRobot } from 'react-icons/fa';
 import safetyTips from './data/safetyTips.json';
 import policies from './data/policies.json';
@@ -7,33 +7,35 @@ import './Chatbot.css';
 
 const Chatbot = ({ isOpen, onClose }) => {
   const [messages, setMessages] = useState([
-    { sender: 'bot', text: "Welcome to SafeDelhi! Ask me about women's safety measures, policies, or emergency contacts." }
+    { sender: 'bot', text: "👋 Welcome! I’m Sumitra, your safety assistant. You can ask me about:\n- 🔹 Safety Tips\n- 📜 Policies & Schemes\n- 🚨 Emergency Contacts\nHow can I help you today?" }
   ]);
   const [inputText, setInputText] = useState('');
 
   const getBotResponse = (userInput) => {
     const lowerInput = userInput.toLowerCase();
     
-    // Safety tips
+    // Safety tips with motivation
     if (lowerInput.includes('tip') || lowerInput.includes('advice')) {
       const randomTip = safetyTips.tips[Math.floor(Math.random() * safetyTips.tips.length)];
-      return `Safety Tip: ${randomTip}`;
+      const randomQuote = safetyTips.motivational_quotes[Math.floor(Math.random() * safetyTips.motivational_quotes.length)];
+      return `🔹 *Safety Tip:* ${randomTip}\n💡 *Remember:* "${randomQuote}"`;
     }
 
     // Policies
     if (lowerInput.includes('policy') || lowerInput.includes('scheme')) {
-      return policies.policies.map(policy => 
-        `${policy.name}: ${policy.details}`
-      ).join('\n');
+      return `📜 *Government Policies & Schemes:*\n` + 
+        policies.policies.map(policy => `🔹 *${policy.name}:* ${policy.details}`).join('\n\n');
     }
 
     // Emergency contacts
     if (lowerInput.includes('emergency') || lowerInput.includes('contact')) {
-      return `Emergency Contacts:\n- Police: 100\n- Women Helpline: 181\n- Delhi Commission for Women: 011-23379181`;
+      return `🚨 *Emergency Contacts:*\n` + 
+        Object.entries(emergencyContacts.helpline_numbers).map(([country, number]) => 
+          `🔹 *${country}:* ${number}`).join('\n');
     }
 
     // Default response
-    return "I'm here to help with women's safety information. You can ask about:\n- Safety tips\n- Government policies\n- Emergency contacts";
+    return "I'm here to help with women's safety information. 🔹 Ask me about *safety tips, policies, or emergency contacts*!";
   };
 
   const handleSend = () => {

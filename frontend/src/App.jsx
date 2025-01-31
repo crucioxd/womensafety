@@ -5,6 +5,8 @@ import ComplaintForm from './pages/ComplaintForm';
 import Navbar from './components/navbar';
 import SOSPage from './pages/SOSPage';
 import LoginPage from './pages/LoginPage';
+import VolunteershipForm from './pages/VolunteerForms';
+import LegalAdviceForm from './pages/LegalAid';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -58,6 +60,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/file-complaint" element={<ComplaintForm />} />
         <Route path="/live-sos" element={<SOSPage />} />
+        <Route path="/volunteer" element={<VolunteershipForm />} />
+        <Route path="/legal-aid" element={<LegalAdviceForm />} />
         <Route path="/login" element={<LoginPage onLogin={() => setIsLoggedIn(true)} />} />
       </Routes>
     </Router>

@@ -1,8 +1,9 @@
-import { FaCommentDots, FaCrosshairs, FaHandHolding, FaFemale, FaRobot } from "react-icons/fa";
+import { FaCommentDots, FaCrosshairs, FaHandHolding, FaFemale, FaRobot, FaBalanceScale } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import Chatbot from "./Chatbot/Chatbot";
+import logo from  "../assets/Logo.png";
 
 const Navbar = ({ isLoggedIn, setIsLoggedIn, lang, toggleLanguage }) => {
   const [scrolled, setScrolled] = useState(false);
@@ -27,9 +28,8 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn, lang, toggleLanguage }) => {
     <>
       <nav className={`navbar-container ${scrolled ? "scrolled" : ""}`}>
         <div className="logo-container">
-          <Link to="/" className="logo-link">
-            <span className="logo-text">Sum<FaFemale className="logo-icon" />tra</span>
-          </Link>
+        <img src={logo} alt="Sumitra Logo" className="logo-image" />
+
         </div>
 
         <div className="nav-links">
@@ -52,6 +52,10 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn, lang, toggleLanguage }) => {
                 <Link to="/live-sos" className="dropdown-item">
                   <FaCrosshairs className="dropdown-icon" /> Live SOS
                 </Link>
+                <Link to="/legal-aid" className="dropdown-item">
+                  <FaBalanceScale className="dropdown-icon" /> Legal Aid
+                </Link>
+                
               </div>
             )}
           </div>
